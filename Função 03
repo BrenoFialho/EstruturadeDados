@@ -6,35 +6,28 @@
 
 #Vamos estruturar a seguinte função:
 
-import requests                           # Importa o módulo 'requests', que permite fazer requisições HTTP de forma simplificada.
+import requests                           # Importa a biblioteca 'requests', que permite fazer solicitações de links da internet.
 
-def dados_postais(cep):                   # Define uma função chamada 'dados_postais' que recebe um único argumento: 'cep'.
+def dados_postais(cep):                   # Definindo uma função chamada 'dados_postais' que recebe o argumento 'cep'.
     
-    url = f'https://viacep.com.br/ws/{cep}/json/'     # Usa uma f-string para construir a URL da API do ViaCEP, A URL é formatada para incluir o 'cep' fornecido na função.
+    url = f'https://viacep.com.br/ws/{cep}/json/'   # Usa uma "f-string" para construir o link da API do ViaCEP, o link será  personalizável para incluir o 'cep' fornecido na função.
     
-    
-    
-    resposta = requests.get(url)          # Utiliza a função 'get' do módulo 'requests' para fazer uma requisição GET à URL fornecida, O resultado dessa requisição é armazenado na variável 'resposta'.
+    resposta = requests.get(url)          # Utiliza a função 'get' da biblioteca 'requests' para fazer a solicitação do link, e armazena na variável 'resposta'.
 
-    if resposta.status_code == 200:        # Verifica se o código de status da resposta é 200, o que indica uma resposta bem-sucedida.
+    if resposta.status_code == 200:        # Utiliza a função 'status_code' da biblioteca 'requests', e verifica se o código_status da resposta foi bem sucedido (200, 404 e 500).
         
-        dados = resposta.json()          # Converte o conteúdo da resposta (que está em formato JSON) em um dicionário Python e armazena na variável 'dados'.
+        dados = resposta.json()          # Converte os dados da resposta (que está em formato JSON), ou seja, um código, em um dicionário Python e armazena na variável 'dados'.
         
-        
-        return dados                    # Retorna o dicionário 'dados'.
+        return dados                    # Retorna a string 'dados'.
     
-    else:                               # Se o código de status da resposta não for 200, entra na cláusula 'else'.
+    else:                              # Caso o código de status da resposta não for 200, ou seja, não seja bem sucedido, entra na cláusula 'else'.
         
-        print("Erro na requisição!")     # Imprime uma mensagem de erro.
+        print("Erro no CEP informado")     # Imprime uma mensagem de erro, pois possívelmente o CEP está errado.
         
-        
-        return None                    # Retorna 'None', que é um valor especial em Python que indica "nada" ou "nulo".
+        return None                    # Rertorna vazio
 
-
-cep_input = input("Digite um CEP: ")          # Solicita ao usuário que insira um CEP por meio do terminal/console.
-
+cep_input = input("Digite um CEP: ")          # Solicita ao usuário que insira um CEP
 
 resultado = dados_postais(cep_input)           # Chama a função 'dados_postais' com o CEP fornecido pelo usuário e armazena o resultado na variável 'resultado'.
 
-
-print(resultado)                           # Imprime o resultado (ou seja, os dados postais ou uma mensagem de erro) na tela.
+print(resultado)                           # Imprime o resultado na tela.
