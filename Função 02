@@ -2,7 +2,6 @@ def somatorio_quadrado():            # Defifindo a função somatório_quadrado,
 
     total = 0                        # Definindo a variável 'total' e atribuindo valor igual a zero;
     
-    
     for n in range(1, 101):          # Criando um loop que varia a variável 'n' de 1 até 100.
         
         termo = 1/(n*n)              # Atribuindo o valor 1/n*n na variável 'termo'.
