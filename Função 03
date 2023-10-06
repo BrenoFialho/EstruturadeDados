@@ -6,25 +6,35 @@
 
 #Vamos estruturar a seguinte função:
 
-import requests
+import requests                           # Importa o módulo 'requests', que permite fazer requisições HTTP de forma simplificada.
 
-def dados_postais(cep):
-    # Construímos a URL usando o CEP fornecido
-    url = f'https://viacep.com.br/ws/{cep}/json/'
+def dados_postais(cep):                   # Define uma função chamada 'dados_postais' que recebe um único argumento: 'cep'.
     
-    # Fazemos uma requisição GET à API do ViaCEP
-    resposta = requests.get(url)
+    url = f'https://viacep.com.br/ws/{cep}/json/'     # Usa uma f-string para construir a URL da API do ViaCEP, A URL é formatada para incluir o 'cep' fornecido na função.
+    
+    
+    
+    resposta = requests.get(url)          # Utiliza a função 'get' do módulo 'requests' para fazer uma requisição GET à URL fornecida, O resultado dessa requisição é armazenado na variável 'resposta'.
 
-    # Se a requisição for bem-sucedida, imprimimos o conteúdo
-    if resposta.status_code == 200:
-        dados = resposta.json()  # Convertendo a resposta para formato de dicionário (JSON)
-        return dados
-    else:
-        print("Erro na requisição!")
-        return None
+    if resposta.status_code == 200:        # Verifica se o código de status da resposta é 200, o que indica uma resposta bem-sucedida.
+        
+        dados = resposta.json()          # Converte o conteúdo da resposta (que está em formato JSON) em um dicionário Python e armazena na variável 'dados'.
+        
+        
+        return dados                    # Retorna o dicionário 'dados'.
+    
+    else:                               # Se o código de status da resposta não for 200, entra na cláusula 'else'.
+        
+        print("Erro na requisição!")     # Imprime uma mensagem de erro.
+        
+        
+        return None                    # Retorna 'None', que é um valor especial em Python que indica "nada" ou "nulo".
 
-# Testando a função
-cep_input = input("Digite um CEP: ")
-resultado = dados_postais(cep_input)
-print(resultado)
 
+cep_input = input("Digite um CEP: ")          # Solicita ao usuário que insira um CEP por meio do terminal/console.
+
+
+resultado = dados_postais(cep_input)           # Chama a função 'dados_postais' com o CEP fornecido pelo usuário e armazena o resultado na variável 'resultado'.
+
+
+print(resultado)                           # Imprime o resultado (ou seja, os dados postais ou uma mensagem de erro) na tela.
