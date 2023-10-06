@@ -1,1 +1,22 @@
+import requests
+
+def dados_postais(cep):
+    # Construímos a URL usando o CEP fornecido
+    url = f'https://viacep.com.br/ws/{cep}/json/'
+    
+    # Fazemos uma requisição GET à API do ViaCEP
+    resposta = requests.get(url)
+
+    # Se a requisição for bem-sucedida, imprimimos o conteúdo
+    if resposta.status_code == 200:
+        dados = resposta.json()  # Convertendo a resposta para formato de dicionário (JSON)
+        return dados
+    else:
+        print("Erro na requisição!")
+        return None
+
+# Testando a função
+cep_input = input("Digite um CEP: ")
+resultado = dados_postais(cep_input)
+print(resultado)
 
