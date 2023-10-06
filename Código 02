@@ -1,4 +1,5 @@
-def somatorio_quadrado():    
+def somatorio_quadrado():            # Nessa linha é definido a função 'somatorio_quadrado' que não recebe nenhum argumento.
+
     total = 0                        # Inicializamos uma variável 'total' com o valor 0.
     
     
