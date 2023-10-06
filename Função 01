@@ -1,21 +1,21 @@
-def somatorio():                        # Nessa linha é definido a função 'somatorio' que não recebe nenhum argumento.
+def somatorio():                        # Defifindo a função somatório, sem argumentos;
 
-    total = 0                           # Nessa linha definimos a variável 'total' com o valor 0.
+    total = 0                           # Definindo a variável 'total' e atribuindo valor igual a zero;
     
-    for n in range(1, 101):             # Aqui, temos um loop que varia a variável 'n' de 1 até 100, inclusivamente.
+    for n in range(1, 101):             # Criando um loop que varia a variável 'n' de 1 até 100.
          
-        termo = 1/n                     # Calculamos 1/n e armazenamos o resultado na variável 'termo'.
+        termo = 1/n                     # Atribuindo o valor 1/n na variável 'termo'.
 
-        novo_total = total + termo      # Agora, adicionamos o 'termo' ao 'total' e armazenamos o resultado na variável 'novo_total'.
+        novo_total = total + termo      # Criando um somatório entre 'termo' e 'total' e armazenando o resultado na variável 'novo_total'.
 
         
-        total = novo_total              # Em seguida, atualizamos o valor de 'total' com 'novo_total' para a próxima iteração.
+        total = novo_total              # Atualizando o valor da variável 'total' com 'novo_total' para a próxima iteração do loop.
     
     
     return total                        # Depois que o loop termina, retornamos o valor acumulado em 'total'.
 
 
-resultado = somatorio()                 # Aqui, chamamos a função 'somatorio' e armazenamos o resultado na variável 'resultado'.
+resultado = somatorio()                 # Chamamos a função 'somatorio' e armazenamos o resultado na variável 'resultado'.
 
 
-print(resultado)                        # Finalmente, imprimimos o valor de 'resultado' na tela.
+print(resultado)                        # Imprimindo o valor de 'resultado' na tela.
