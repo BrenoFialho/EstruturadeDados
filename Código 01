@@ -1,4 +1,4 @@
-def somatorio():                        # Essa linha será definida a função 'somatorio' que não recebe nenhum argumento.
+def somatorio():                        # Nessa linha é definido a função 'somatorio' que não recebe nenhum argumento.
 
     total = 0                           # Nessa linha definimos a variável 'total' com o valor 0.
     
