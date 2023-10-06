@@ -1,3 +1,11 @@
+#Usando o exemplo dado pelo professor na aula
+#import requests
+#url = 'https://api.github.com/users/carlosbazilio'
+#dados = requests.get(url)
+#print (dados.content)
+
+#Vamos estruturar a seguinte função:
+
 import requests
 
 def dados_postais(cep):
