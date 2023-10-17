@@ -42,8 +42,7 @@ def urls_github(alunos):                                       # Definindo funç
     return lista_urls                                          # Retornando a lista completa de URLs.
 
 emails = []
-Print ("Lista de emails: " emails_da_turma(alunos))
-Print ("--------------------------------------------------------------------------------------------------------------------")
-input("Qual o tipo de alunos (Regular ou Especial)?")
-Print(
+emails = emails_da_turma(alunos)
+Print ("Lista de emails: " emails)
+
 
