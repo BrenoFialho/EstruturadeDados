@@ -1,6 +1,6 @@
-# Criamos uma lista chamada 'alunos' que contém dicionários. Cada dicionário representa um aluno.
+# Criando uma lista chamada 'alunos' que contém dicionários, sendo cada dicionário representando um aluno.
+
 alunos = [
-    # Primeiro aluno: Thalessa
     {"nome":"Thalessa", "nomecompleto":"Thalessa Hungerbuhler Daroz", "email":"thalessa@gmail.com", "tipo":"Especial", "cr":8.5},
     {"nome":"Breno", "nomecompleto":"Breno Cagide Fialho", "email":"breno@gmail.com", "tipo":"Regular", "cr":7.5},
     {"nome":"Josiane", "nomecompleto":"Josiane Coelho de Oliveira", "email":"josiane@gmail.com", "tipo":"Regular", "cr":8.2},
@@ -33,13 +33,17 @@ def media_cr(alunos):                                          # Definindo funç
         soma_cr = soma_cr + aluno["cr"]                        # Adicionando o CR do aluno atual à soma
     return soma_cr / len(alunos)                               # Calculando a média e retornando
 
-def urls_github(alunos):                                       # Definindo função para retornar a média dos CRs dos alunos
+def urls_github(alunos):                                       # Definindo função para retornar uma lista de endereços de usuários no github
     base_url = "https://api.github.com/users/"                 # Definindo o URL para a variável base_url
     lista_urls = []                                            # Lista vazia para armazenar as URLs dos alunos
     for aluno in alunos:                                       # Definindo função para retornar a função para retornar uma lista de endereços de usuários no github   
         url_aluno = base_url + aluno["email"].split("@")[0]    # Construindo a URL para o aluno atual e adicionando à lista
-        lista_urls.append(url_aluno)                           
-    return lista_urls
+        lista_urls.append(url_aluno)                           # Adicionando a URL construída à lista de URLs.
+    return lista_urls                                          # Retornando a lista completa de URLs.
 
-
+emails = []
+Print ("Lista de emails: " emails_da_turma(alunos))
+Print ("--------------------------------------------------------------------------------------------------------------------")
+input("Qual o tipo de alunos (Regular ou Especial)?")
+Print(
 
