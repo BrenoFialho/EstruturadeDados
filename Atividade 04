@@ -4,60 +4,41 @@ alunos = [
     {"nome":"Thalessa", "nomecompleto":"Thalessa Hungerbuhler Daroz", "email":"thalessa@gmail.com", "tipo":"Especial", "cr":8.5},
     {"nome":"Breno", "nomecompleto":"Breno Cagide Fialho", "email":"breno@gmail.com", "tipo":"Regular", "cr":7.5},
     {"nome":"Josiane", "nomecompleto":"Josiane Coelho de Oliveira", "email":"josiane@gmail.com", "tipo":"Regular", "cr":8.2},
-    {"nome":"Luciana", "nomecompleto":"Luciana de Oliveira Gonzaga", "email":"luciana@gmail.com", "tipo":"Especial", "cr":8.9},
+    {"nome":"Luciana", "nomecompleto":"Luciana de Oliveira Gonzaga", "email":"luciana@gmail.com", "tipo":"Regular", "cr":8.9}
 ]
 
+def emails_da_turma(alunos):                        # Definindo função para retornar a lista de emails da turma 
+    lista_emails = []                               # Criando uma lista vazia para armazenar os emails
+    for aluno in alunos:                            # Loop para percorrer cada aluno na lista de alunos
+        lista_emails.append(aluno["email"])         # Acessando o email do aluno e adicionando à lista_emails
+    return lista_emails                             # Retornando a lista completa de emails
 
-def emails_da_turma(alunos):                            # Criando uma lista vazia para armazenar os emails
+def alunos_por_tipo(alunos, tipo):                  # Definindo função para retornar o tipo do aluno (Regular ou Especial)
+    lista_alunos_tipo = []                          # Criando uma lista vazia para armazenar os alunos do tipo especificado
+    for aluno in alunos:                            # Loop para percorrer cada aluno na lista de alunos
+        if aluno["tipo"] == tipo:                   # Condição para filtrar os alunos do tipo desejado
+            lista_alunos_tipo.append(aluno)         # Adicionando o aluno à lista se ele for do tipo especificado
+    return lista_alunos_tipo                        # Retornando a lista de alunos do tipo desejado
 
-    lista_emails = []
-    
-    # Loop tradicional para percorrer cada aluno na lista de alunos
-    for aluno in alunos:
-        # Acessando o email do aluno e adicionando à lista_emails
-        lista_emails.append(aluno["email"])
-    
-    # Retornando a lista completa de emails
-    return lista_emails
+def emails_alunos_regulares(alunos):                          # Definindo função para retornar a lista de emails dos alunos regulares
+    lista_emails_regulares = []                               # Lista vazia para armazenar os emails dos alunos regulares
+    for aluno in alunos:                                      # Loop para percorrer cada aluno na lista de alunos 
+        if aluno["tipo"] == "Regular":                        # Condição para filtrar os alunos do tipo desejado
+            lista_emails_regulares.append(aluno["email"])     # Adicionando o email do aluno à lista se ele for regular
+    return lista_emails_regulares                             # Retornando a lista de emails do tipo Regular
 
-def alunos_por_tipo(alunos, tipo):
-    lista_alunos_tipo = []  # Lista vazia para armazenar os alunos do tipo especificado
+def media_cr(alunos):                                          # Definindo função para retornar a média dos CRs dos alunos
+    soma_cr = 0                                                # Iniciando a soma dos CRs em 0
+    for aluno in alunos:                                       # Loop para percorrer cada aluno na lista de alunos 
+        soma_cr = soma_cr + aluno["cr"]                        # Adicionando o CR do aluno atual à soma
+    return soma_cr / len(alunos)                               # Calculando a média e retornando
 
-    for aluno in alunos:
-        if aluno["tipo"] == tipo:
-            lista_alunos_tipo.append(aluno)  # Adicionando o aluno à lista se ele for do tipo especificado
-
-    return lista_alunos_tipo
-
-
-def emails_alunos_regulares(alunos):
-    lista_emails_regulares = []  # Lista vazia para armazenar os emails dos alunos regulares
-
-    for aluno in alunos:
-        if aluno["tipo"] == "Regular":
-            lista_emails_regulares.append(aluno["email"])  # Adicionando o email do aluno à lista se ele for regular
-
-    return lista_emails_regulares
-
-def media_cr(alunos):
-    soma_cr = 0  # Iniciando a soma dos CRs em 0
-
-    for aluno in alunos:
-        soma_cr += aluno["cr"]  # Adicionando o CR do aluno atual à soma
-
-    # Calculando a média e retornando
-    return soma_cr / len(alunos)
-
-
-def urls_github(alunos):
-    base_url = "https://api.github.com/users/"
-    lista_urls = []  # Lista vazia para armazenar as URLs dos alunos
-
-    for aluno in alunos:
-        # Construindo a URL para o aluno atual e adicionando à lista
-        url_aluno = base_url + aluno["email"].split("@")[0]
-        lista_urls.append(url_aluno)
-
+def urls_github(alunos):                                       # Definindo função para retornar a média dos CRs dos alunos
+    base_url = "https://api.github.com/users/"                 # Definindo o URL para a variável base_url
+    lista_urls = []                                            # Lista vazia para armazenar as URLs dos alunos
+    for aluno in alunos:                                       # Definindo função para retornar a função para retornar uma lista de endereços de usuários no github   
+        url_aluno = base_url + aluno["email"].split("@")[0]    # Construindo a URL para o aluno atual e adicionando à lista
+        lista_urls.append(url_aluno)                           
     return lista_urls
 
 
