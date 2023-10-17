@@ -1,5 +1,7 @@
 # Criando uma lista chamada 'alunos' que contém dicionários, sendo cada dicionário representando um aluno.
 
+#("--------------------------------------------------- Tópico 1 ------------------------------------------------------------")
+
 alunos = [
     {"nome":"Thalessa", "nomecompleto":"Thalessa Hungerbuhler Daroz", "email":"thalessa@gmail.com", "tipo":"Especial", "cr":9.5},
     {"nome":"Breno", "nomecompleto":"Breno Cagide Fialho", "email":"breno@gmail.com", "tipo":"Regular", "cr":8.5},
@@ -41,14 +43,14 @@ def urls_github(alunos):                                       # Definindo funç
         lista_urls.append(url_aluno)                           # Adicionando a URL construída à lista de URLs.
     return lista_urls                                          # Retornando a lista completa de URLs.
 
-print("---------------------------------------------------------------------------------------------------------------")
+print("--------------------------------------------------- Tópico 2 ------------------------------------------------------------")
 
 emails = []                                                    # Criando uma lista para receber a função emails da turma
 emails = emails_da_turma(alunos)                               # Chamando a função email da turma
 print ("Lista de emails:")                                     
 print (emails)                                                 #Imprimindo a lista de emails
 
-print("---------------------------------------------------------------------------------------------------------------")
+print("--------------------------------------------------- Tópico 3 ------------------------------------------------------------")
 
 tipo_aluno = input("Qual o tipo de aluno (Regular ou Especial? ")          # Solicita ao usuário que insira um CEP
 lista_tipo_aluno = []                                                      # Criando uma lista para receber os alunos do tipo desejado
@@ -56,21 +58,21 @@ lista_tipo_aluno = alunos_por_tipo(alunos, tipo_aluno)                     # Cha
 print ("Lista de alunos do tipo desejado:")  
 print (lista_tipo_aluno)                                                   # Imprimindo a lista de alunos do tipo desejado
 
-print("---------------------------------------------------------------------------------------------------------------")
+print("--------------------------------------------------- Tópico 4 ------------------------------------------------------------")
 
 emails_regulares = []                                                      # Criando uma lista para receber os alunos do tipo de aluno regular
 emails_regulares = emails_alunos_regulares(alunos)                         # Chamando a função tipo de aluno regular
 print ("Lista de emails dos alunos do tipo regular:")  
 print (emails_regulares)                                                   # Imprimindo a lista de alunos do tipo regular
 
-print("---------------------------------------------------------------------------------------------------------------")
+print("--------------------------------------------------- Tópico 5 ------------------------------------------------------------")
 
 cr = 0                                                                    # Atribuindo zero para a variável que receberá a função da média dos Crs
 cr = media_cr(alunos)                                                     # Chamando a função para calcular a média dos CRs
 print ("Média dos alunos:")  
 print (cr)                                                                # Imprimindo a média dos Crs
 
-print("---------------------------------------------------------------------------------------------------------------")
+print("--------------------------------------------------- Tópico 6 ------------------------------------------------------------")
 
 usuarios_git = []                                                         # Criando uma lista para receber os usuários do GitHub
 usuarios_git = urls_github(alunos)                                        # Chamando a função para criar os endereços de usuários no github
