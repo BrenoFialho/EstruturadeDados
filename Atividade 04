@@ -41,8 +41,9 @@ def urls_github(alunos):                                       # Definindo funç
         lista_urls.append(url_aluno)                           # Adicionando a URL construída à lista de URLs.
     return lista_urls                                          # Retornando a lista completa de URLs.
 
-emails = []
-emails = emails_da_turma(alunos)
-Print ("Lista de emails: " emails)
+emails = []                                                    # Criando uma lista para receber a função emails da turma
+emails = emails_da_turma(alunos)                               # Chamando a função email da turma
+print ("Lista de emails:")                                     
+print (emails)                                                 #Imprimindo a lista de emails
 
 
