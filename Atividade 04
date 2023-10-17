@@ -1,0 +1,15 @@
+# Criamos uma lista chamada 'alunos' que contém dicionários. Cada dicionário representa um aluno.
+alunos = [
+    # Primeiro aluno: Thalessa
+    {"nome":"Thalessa", "nomecompleto":"Thalessa Hungerbuhler Daroz", "email":"thalessa@gmail.com", "tipo":"Especial", "cr":8.5},
+    # Segundo aluno: João
+    {"nome":"João", "nomecompleto":"João Silva", "email":"joao@gmail.com", "tipo":"Regular", "cr":7.0},
+    # Terceiro aluno: Maria
+    {"nome":"Maria", "nomecompleto":"Maria Oliveira", "email":"maria@gmail.com", "tipo":"Regular", "cr":9.0},
+    # Quarto aluno: Josiane
+    {"nome":"Josiane", "nomecompleto":"Josiane Coelho de Oliveira", "email":"josiane@gmail.com", "tipo":"Regular", "cr":8.2},
+    # Quinto aluno: Luciana
+    {"nome":"Luciana", "nomecompleto":"Luciana de Oliveira Gonzaga", "email":"luciana@gmail.com", "tipo":"Especial", "cr":8.9},
+    # Sexto aluno: Breno
+    {"nome":"Breno", "nomecompleto":"Breno Cagide Fialho", "email":"breno@gmail.com", "tipo":"Regular", "cr":7.5}
+]
