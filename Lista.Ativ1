@@ -1,0 +1,56 @@
+class Contato:                                          # Definindo a classe contato
+    def __init__(self, nome, telefone, endereco, relacao):  
+        self.nome = nome        
+        self.telefone = telefone  
+        self.endereco = endereco  
+        self.relacao = relacao   
+
+    def __str__(self):                                  # Função para retornar a string em um formato mais organizado e legível.
+        return f"Nome: {self.nome}, Telefone: {self.telefone}, Endereço: {self.endereco}, Relação: {self.relacao}"
+
+class Agenda:                                           # Definindo a classe agenda
+
+    def __init__(self):                                 # Definindo função para criar uma lista para armazenar os contatos
+        self.contatos = []  
+
+    def adicionar_ou_alterar_contato(self, contato):    # Função para adicionar um novo contato ou alterar um existente.
+        for i, c in enumerate(self.contatos):           # Loop para percorrer a lista de contatos existentes
+            if c.nome == contato.nome:                                                       
+                self.contatos[i] = contato     
+                return
+        self.contatos.append(contato)                    # Caso não encontre um contato com o mesmo nome, o substitui por um novo
+
+    def remover_contato(self, nome):                    # Função para remover um contato pelo nome.
+        self.contatos = list(filter(lambda c: c.nome != nome, self.contatos))  # Usando o filter para manter apenas os contatos cujo nome é diferente do fornecido.
+
+    def buscar_contato(self, nome):                     # Busca um contato pelo nome 
+        for contato in self.contatos:                   # Percorre a lista de contatos
+            if nome in contato.nome:                    # Se encontrar um contato com o nome fornecido, retorna esse contato
+                return contato
+        return None                                     # Se não encontrar, retorna vazio
+
+    def listar_contatos(self):                         # Usa map para aplicar print a cada contato
+        list(map(print, self.contatos))                # Imprime cada contato usando o método __str__ da classe Contato
+
+class Principal:
+    def executar(self):                                # Método principal que executa o programa.
+        
+        agenda = Agenda()                              # Criar uma variavel para receber a agenda
+
+        agenda.adicionar_ou_alterar_contato(Contato("Josiane", "2298623620", "Rua 10", "UFF"))            # Adicionando contatos iniciais
+        agenda.adicionar_ou_alterar_contato(Contato("Luciana", "2299632362", "Rua 160", "Cederj"))
+        agenda.adicionar_ou_alterar_contato(Contato("Thalessa", "229948501", "Rua 4", "Infância"))
+        agenda.adicionar_ou_alterar_contato(Contato("Breno", "21987623062", "Rua 20", "Escola"))
+        agenda.adicionar_ou_alterar_contato(Contato("Bazilio", "2295623201", "Rua 1", "?"))
+        agenda.adicionar_ou_alterar_contato(Contato("Calouro", "243620236241", "Rua 36", "Festa"))
+
+        agenda.adicionar_ou_alterar_contato(Contato("Bazilio", "2295623201", "Rua 1", "Dança"))          # Altera o contato Fulano
+
+        agenda.remover_contato("Calouro")                                                                # Remove o contato Calouro
+
+        agenda.listar_contatos()                                                                         # Lista os contatos restantes
+
+
+if __name__ == "__main__":                                                                    # Executando o programa
+    principal = Principal()                                                                   # Cria uma instância da classe Principal
+    principal.executar()                                                                      # Chama o método executar para iniciar o programa
